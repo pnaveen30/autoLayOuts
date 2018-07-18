@@ -16,6 +16,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor grayColor];
+    shadow.shadowOffset = CGSizeMake(0.0, 0.5);
+    NSDictionary *attribute = [NSDictionary dictionaryWithObjectsAndKeys:
+                               [UIFont fontWithName:@"arial" size:10.0f], NSFontAttributeName,
+                               [UIColor blackColor], NSForegroundColorAttributeName,
+                               shadow,NSShadowAttributeName,nil];
+    [[UITabBarItem appearance] setTitleTextAttributes:attribute forState:UIControlStateNormal];
     // Override point for customization after application launch.
     return YES;
 }
